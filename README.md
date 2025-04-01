@@ -1,3 +1,6 @@
+# 说明
+基于原项目https://github.com/iaping/go-okx 的二开,暂时满足自己的小需求，后续等完善一批接口考虑合并到上游～
+
 # go-okx
 golang sdk for https://www.okx.com/docs-v5
 
