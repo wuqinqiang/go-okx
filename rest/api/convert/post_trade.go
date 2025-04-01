@@ -1,6 +1,6 @@
 package convert
 
-import "github.com/iaping/go-okx/rest/api"
+import "github.com/wuqinqiang/go-okx/rest/api"
 
 func NewPostTrade(param *PostTradeParam) (api.IRequest, api.IResponse) {
 	return &api.Request{

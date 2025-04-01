@@ -3,7 +3,7 @@ package public
 import (
 	"encoding/json"
 
-	"github.com/iaping/go-okx/ws"
+	"github.com/wuqinqiang/go-okx/ws"
 )
 
 type HandlerOptSummary func(EventOptSummary)

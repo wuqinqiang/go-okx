@@ -1,8 +1,8 @@
 package subaccount
 
 import (
-	"github.com/iaping/go-okx/rest/api"
-	"github.com/iaping/go-okx/rest/api/account"
+	"github.com/wuqinqiang/go-okx/rest/api"
+	"github.com/wuqinqiang/go-okx/rest/api/account"
 )
 
 func NewGetBalances(param *GetBalancesParam) (api.IRequest, api.IResponse) {

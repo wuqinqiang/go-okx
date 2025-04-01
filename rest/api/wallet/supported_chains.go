@@ -1,7 +1,7 @@
 package wallet
 
 import (
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/wuqinqiang/go-okx/rest/api"
 )
 
 func NewSupportedChains() (api.IRequest, api.IResponse) {

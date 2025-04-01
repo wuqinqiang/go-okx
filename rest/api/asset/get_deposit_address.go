@@ -1,6 +1,6 @@
 package asset
 
-import "github.com/iaping/go-okx/rest/api"
+import "github.com/wuqinqiang/go-okx/rest/api"
 
 func NewGetDepositAddress(param *GetDepositAddressParam) (api.IRequest, api.IResponse) {
 	return &api.Request{

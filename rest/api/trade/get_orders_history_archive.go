@@ -1,7 +1,7 @@
 package trade
 
 import (
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/wuqinqiang/go-okx/rest/api"
 )
 
 func NewGetOrdersHistoryArchive(param *GetOrdersQueryParam) (api.IRequest, api.IResponse) {

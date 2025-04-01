@@ -1,6 +1,6 @@
 package account
 
-import "github.com/iaping/go-okx/rest/api"
+import "github.com/wuqinqiang/go-okx/rest/api"
 
 func NewPostPositionMarginBalance(param *PostPositionMarginBalanceParam) (api.IRequest, api.IResponse) {
 	return &api.Request{

@@ -2,7 +2,7 @@ package wallet
 
 import (
 	"errors"
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/wuqinqiang/go-okx/rest/api"
 )
 
 func NewTransactionDetailByTxHash(param *TransactionDetailByTxHashParam) (api.IRequest, api.IResponse) {

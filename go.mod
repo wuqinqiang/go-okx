@@ -5,7 +5,6 @@ go 1.24.0
 require (
 	github.com/google/go-querystring v1.1.0
 	github.com/gorilla/websocket v1.5.3
-	github.com/iaping/go-okx v0.0.0-20240823033017-fa8efc7e5b7a
 	github.com/valyala/fasthttp v1.59.0
 )
 

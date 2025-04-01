@@ -1,7 +1,7 @@
 package trade
 
 import (
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/wuqinqiang/go-okx/rest/api"
 )
 
 func NewGetFills(param *GetFillsParam) (api.IRequest, api.IResponse) {

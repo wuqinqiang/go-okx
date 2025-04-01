@@ -1,6 +1,6 @@
 package subaccount
 
-import "github.com/iaping/go-okx/rest/api"
+import "github.com/wuqinqiang/go-okx/rest/api"
 
 func NewPostTransfer(param *PostTransferParam) (api.IRequest, api.IResponse) {
 	return &api.Request{

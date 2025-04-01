@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/google/go-querystring/query"
-	"github.com/iaping/go-okx/common"
-	"github.com/iaping/go-okx/rest/api"
 	"github.com/valyala/fasthttp"
+	"github.com/wuqinqiang/go-okx/common"
+	"github.com/wuqinqiang/go-okx/rest/api"
 )
 
 var (
