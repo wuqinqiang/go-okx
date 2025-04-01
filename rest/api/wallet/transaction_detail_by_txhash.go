@@ -77,11 +77,10 @@ func (t *TransactionDetailByTxHashResp) GetTokenDetail() (Token, error) {
 	if len(t.Data) == 0 {
 		return Token{}, errors.New("no supported chains found")
 	}
-
 	tran := t.Data[0]
 	if len(tran.TokenTransferDetails) == 0 {
 		return Token{}, errors.New("token transfer details not found")
 	}
-	tokenDetail := tran.TokenTransferDetails[0]
-	return tokenDetail, nil
+
+	return tran.TokenTransferDetails[0], nil
 }

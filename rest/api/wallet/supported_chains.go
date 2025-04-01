@@ -17,6 +17,15 @@ type SupportedChainsResp struct {
 	Data []Chain `json:"data"`
 }
 
+func (c *SupportedChainsResp) GetByChainIndex(chainIndex string) (Chain, bool) {
+	for i := range c.Data {
+		if c.Data[i].ChainIndex == chainIndex {
+			return c.Data[i], true
+		}
+	}
+	return Chain{}, false
+}
+
 type Chain struct {
 	Name       string `json:"name"`
 	LogoUrl    string `json:"logoUrl"`
