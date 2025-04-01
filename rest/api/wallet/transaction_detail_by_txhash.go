@@ -1,6 +1,9 @@
 package wallet
 
-import "github.com/iaping/go-okx/rest/api"
+import (
+	"errors"
+	"github.com/iaping/go-okx/rest/api"
+)
 
 func NewTransactionDetailByTxHash(param *TransactionDetailByTxHashParam) (api.IRequest, api.IResponse) {
 	return &api.Request{
@@ -57,5 +60,28 @@ type Trade struct {
 		Amount         string `json:"amount"`
 		State          string `json:"state"`
 	} `json:"internalTransactionDetails"`
-	TokenTransferDetails []interface{} `json:"tokenTransferDetails"`
+	TokenTransferDetails []Token `json:"tokenTransferDetails"`
+}
+
+type Token struct {
+	Amount               string `json:"amount"`
+	From                 string `json:"from"`
+	IsFromContract       bool   `json:"isFromContract"`
+	IsToContract         bool   `json:"isToContract"`
+	Symbol               string `json:"symbol"`
+	To                   string `json:"to"`
+	TokenContractAddress string `json:"tokenContractAddress"`
+}
+
+func (t *TransactionDetailByTxHashResp) GetTokenDetail() (Token, error) {
+	if len(t.Data) == 0 {
+		return Token{}, errors.New("no supported chains found")
+	}
+
+	tran := t.Data[0]
+	if len(tran.TokenTransferDetails) == 0 {
+		return Token{}, errors.New("token transfer details not found")
+	}
+	tokenDetail := tran.TokenTransferDetails[0]
+	return tokenDetail, nil
 }
