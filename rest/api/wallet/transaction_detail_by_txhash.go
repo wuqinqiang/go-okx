@@ -5,6 +5,11 @@ import (
 	"github.com/wuqinqiang/go-okx/rest/api"
 )
 
+var (
+	ErrTransactionNotFound   = errors.New("transaction record does not exist")
+	ErrTokenTransferNotFound = errors.New("token transfer details not found in this transaction")
+)
+
 func NewTransactionDetailByTxHash(param *TransactionDetailByTxHashParam) (api.IRequest, api.IResponse) {
 	return &api.Request{
 		Path:   "/api/v5/wallet/post-transaction/transaction-detail-by-txhash",
@@ -75,11 +80,11 @@ type Token struct {
 
 func (t *TransactionDetailByTxHashResp) GetTokenDetail() (Token, error) {
 	if len(t.Data) == 0 {
-		return Token{}, errors.New("no supported chains found")
+		return Token{}, ErrTransactionNotFound
 	}
 	tran := t.Data[0]
 	if len(tran.TokenTransferDetails) == 0 {
-		return Token{}, errors.New("token transfer details not found")
+		return Token{}, ErrTokenTransferNotFound
 	}
 
 	return tran.TokenTransferDetails[0], nil
